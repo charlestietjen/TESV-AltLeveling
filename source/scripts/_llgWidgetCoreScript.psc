@@ -30,7 +30,7 @@ Int Property Count
   Function Set(int xp_val)
     xpCount = xp_val
     If(Ready)
-      UI.InvokeInt(HUD_MENU, WidgetRoot, ".setCount", xpCount)
+      UI.InvokeInt(HUD_MENU, WidgetRoot + ".setCount", xpCount)
     EndIf
   EndFunction
 endProperty
@@ -106,5 +106,5 @@ EndFunction
 
 ;Function to update the scale of the widget
 Function UpdateScale()
-  UI.SetInt(HUD_MENU, WidgetRoot, + ".Scale", counterSize)
+  UI.SetInt(HUD_MENU, WidgetRoot + ".Scale", counterSize)
 EndFunction
