@@ -34,7 +34,7 @@ endFunction
 
 ;rewrite for new refactor and new formula
 
-function SpendXPMenu(Int aiMessage, Int aiB, Bool abMenu) ;aiMessage is the message box var, aiB is the var for menu choices, abMenu bool for menu is open
+function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMessage is the message box var, aiB is the var for menu choices, abMenu bool for menu is open
 	;disable controls then enable (I don't remember why we do this, it's in the messagebox menu tutorial i think)
 	game.DisablePlayerControls(false, false, false, false, false, true, true, false, 0)
 	game.EnablePlayerControls(false, false, false, false, false, true, true, true, 0)

@@ -1,0 +1,6 @@
+Scriptname cfsReflectEffectScript extends ActiveMagicEffect
+
+ObjectReference Property cfsLevelSpaceXMarker Auto
+ObjectReference Property cfsReturnXMarker auto
+
+actor property playerref auto
