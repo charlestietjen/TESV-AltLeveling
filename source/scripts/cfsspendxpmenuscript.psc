@@ -15,7 +15,7 @@ message property _cfsLevelMenuMagic auto
 message property _cfsLevelMenuSumm1 auto
 globalvariable property _cfsHeldXPFloatGV auto
 message property _cfsLevelMenuSumm3 auto
-message property cfsLevelMenuNope auto
+message property _cfsLevelMenuNope auto
 message property _cfsLevelMenuSumm2 auto
 
 ;-- Variables ---------------------------------------
@@ -34,12 +34,14 @@ endFunction
 
 ;rewrite for new refactor and new formula
 
-function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMessage is the message box var, aiB is the var for menu choices, abMenu bool for menu is open
+function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = true) ;aiMessage is the message box var, aiB is the var for menu choices, abMenu bool for menu is open
+	debug.Notification("spendxpmenu function")
 	;disable controls then enable (I don't remember why we do this, it's in the messagebox menu tutorial i think)
 	game.DisablePlayerControls(false, false, false, false, false, true, true, false, 0)
 	game.EnablePlayerControls(false, false, false, false, false, true, true, true, 0)
 	;store the current xp global in a menu only variable, this is for allowing the player to back out and not have to do a bunch of setting etc.
 	_tempExp = _cfsHeldXPFloatGV.GetValue()
+	abMenu = true
 	_tempSCost = 0 ;reset the temporary skill cost increase variable
 	StatCost() ;run the skillcost function to display accurate cost on root menu
 	;A smarter dev would probably do these ints in an array but...i'm not smart
@@ -65,6 +67,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMes
 	playerRef.RemoveSpell(_cfsSkillGainKillerAb)
 	;While the menu bool is true open the Menu
 	While abMenu
+		debug.Notification("abMenu is" + abMenu)
 		if aiB != -1 ;Catch the int somehow dropping below 0
 			if aiMessage == 0 ;root Menu
 				aiB = cfsLevelMenuRoot.show(_tempExp, cfshStatCost) ;show the root menu and supply the tempExp and statCost variables, also this other stuff?
@@ -86,7 +89,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMes
 					playerRef.AddSpell(_cfsSkillGainKillerAb, false)
 				endif
 			elseif aiMessage == 1 ;Combat options Menu, show the combat menu and send it the tempExp, Stat cost and current increment values per combat skill
-				_cfsLevelMenuCombat.show(_tempExp, cfshStatCost, archInc as float, blocInc as float, harmInc as float, onehInc as float, smithInc as float, twohInc as float)
+				aiB = _cfsLevelMenuCombat.show(_tempExp, cfshStatCost, archInc as float, blocInc as float, harmInc as float, onehInc as float, smithInc as float, twohInc as float)
 				if aiB == 0 && _tempExp >= cfshStatCost ;archery
 					archInc += 1 ;increase the increment variable for later commit
 					stXP() ;reduce remaining tempXP and add a simulated step to stat cost formula
@@ -100,15 +103,15 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMes
 					stXP()
 					statCost()
 				ElseIf aiB == 3 && _tempExp >= cfshStatCost ;two handed
-					twohInc += 1
-					stXP()
-					statCost()
-				ElseIf aiB == 4 && _tempExp >= cfshStatCost ;one handed
 					onehInc += 1
 					stXP()
 					statCost()
-				ElseIf aiB == 5 && _tempExp >= cfshStatCost ;smithing
+				ElseIf aiB == 4 && _tempExp >= cfshStatCost ;one handed
 					smithInc += 1
+					stXP()
+					statCost()
+				ElseIf aiB == 5 && _tempExp >= cfshStatCost ;smithing
+					twohInc += 1
 					stXP()
 					statCost()
 				elseif aiB == 6 ;back
@@ -117,7 +120,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMes
 					aiMessage = 8 ;insufficient experience
 				endIf
 			elseif aiMessage == 2 ;Magic options menu
-				_cfsLevelMenuMagic.show(_tempExp, cfshStatCost, alteinc as float, conjInc as float, destInc as float, enchInc as float, illuInc as float, restInc as float)
+				aiB = _cfsLevelMenuMagic.show(_tempExp, cfshStatCost, alteinc as float, conjInc as float, destInc as float, enchInc as float, illuInc as float, restInc as float)
 				if aiB == 0 && _tempExp >= cfshStatCost ;alteration
 					alteinc += 1
 					stXP()
@@ -148,7 +151,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMes
 					aiMessage = 8 ;insufficient experience
 				endIf
 			elseif aiMessage == 3 ;Stealth menu
-				_cfsLevelMenuStealth.show(_tempExp, cfshStatCost, alchInc as float, larmInc as float, lockinc as float, pickInc as float, sneaInc as float, speeInc as float)
+				aiB = _cfsLevelMenuStealth.show(_tempExp, cfshStatCost, alchInc as float, larmInc as float, lockinc as float, pickInc as float, sneaInc as float, speeInc as float)
 				if aiB == 0 && _tempExp >= cfshStatCost ;alchemy
 					alchInc += 1
 					stXP()
@@ -179,7 +182,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMes
 					aiMessage = 8 ;insufficient experience
 				endIf
 			elseif aiMessage == 5 ;summary
-				_cfsLevelMenuSumm1.show(archInc as float, blocInc as float, harmInc as float, onehInc as float, smithInc as float, twohInc as float) ;Combat summary, display all selected skill increments
+				aiB = _cfsLevelMenuSumm1.show(archInc as float, blocInc as float, harmInc as float, onehInc as float, smithInc as float, twohInc as float) ;Combat summary, display all selected skill increments
 				if aiB == 0 ;confirm
 					aiMessage = 9
 				elseif aiB == 1 ;Back
@@ -190,7 +193,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMes
 					aiMessage = 7
 				endIf
 			elseif aiMessage == 6
-				_cfsLevelMenuSumm2.show(alteinc as float, conjInc as float, destInc as float, enchInc as float, illuInc as float, restInc as float) ;Magic summary
+				aiB = _cfsLevelMenuSumm2.show(alteinc as float, conjInc as float, destInc as float, enchInc as float, illuInc as float, restInc as float) ;Magic summary
 				if aiB == 0 ;confirm
 					aiMessage = 9
 				elseif aiB == 1 ;back
@@ -201,7 +204,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMes
 					aiMessage = 7
 				endIf
 			elseif aiMessage == 7
-				_cfsLevelMenuSumm3.show(alchInc as float, larmInc as float, lockinc as float, pickInc as float, sneaInc as float, speeInc as float)
+				aiB = _cfsLevelMenuSumm3.show(alchInc as float, larmInc as float, lockinc as float, pickInc as float, sneaInc as float, speeInc as float)
 				if aiB == 0 ;confirm
 					aiMessage = 9
 				elseif aiB == 1 ;back
@@ -211,9 +214,14 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMes
 				elseif aiB == 3 ;magic
 					aiMessage = 6
 				endIf
-			elseif aiMessage == 9 ;commit changes by increments and close out
 			elseIf aiMessage == 8
-			endIf
+				aiB = _cfsLevelMenuNope.show()
+				if aiB == 0
+					aiMessage = 0
+				else
+					aiMessage = 0
+				endif
+			elseif aiMessage == 9 ;commit changes by increments and close out
 				if archInc != 0
 					game.incrementskillby("marksman", archInc)
 				endIf
@@ -275,6 +283,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = false) ;aiMes
 			else
 				aiMessage = 0
 			endif
+		endif
 	endWhile
 endFunction
 
