@@ -1,17 +1,17 @@
 scriptName cfsspendxpmenuscript extends Quest
 
 ;-- Properties --------------------------------------
-message property cfsLevelMenuCombat auto
+message property _cfsLevelMenuCombat auto
 cfsxpwidgetcore property WC auto
 Float property cfshStatCost auto
 Quest property _cfsWidgetQuest auto
-message property cfsLevelMenuStealth auto
+message property _cfsLevelMenuStealth auto
 sound property cfsxpacquire auto
 spell property _cfsSkillGainKillerAb auto
 Float property cfsHeldExperience auto
 actor property playerRef auto
 message property cfsLevelMenuRoot auto
-message property cfsLevelMenuMagic auto
+message property _cfsLevelMenuMagic auto
 message property _cfsLevelMenuSumm1 auto
 globalvariable property _cfsHeldXPFloatGV auto
 message property _cfsLevelMenuSumm3 auto
@@ -20,7 +20,7 @@ message property _cfsLevelMenuSumm2 auto
 
 ;-- Variables ---------------------------------------
 int property _tempSCost auto hidden
-int property _tempExp auto hidden
+float property _tempExp auto hidden
 ;-- Functions ---------------------------------------
 
 function IncXP(Float xpValue)
@@ -67,7 +67,7 @@ function SpendXPMenu(Int aiMessage, Int aiB, Bool abMenu) ;aiMessage is the mess
 	While abMenu
 		if aiB != -1 ;Catch the int somehow dropping below 0
 			if aiMessage == 0 ;root Menu
-				aiB = cfsLevelMenuRoot.show(tempExp, cfshStatCost) ;show the root menu and supply the tempExp and statCost variables, also this other stuff?
+				aiB = cfsLevelMenuRoot.show(_tempExp, cfshStatCost) ;show the root menu and supply the tempExp and statCost variables, also this other stuff?
 				if aiB == 0 ;combat options
 					aiMessage = 1
 				elseif aiB == 1 ;magic options
@@ -78,47 +78,48 @@ function SpendXPMenu(Int aiMessage, Int aiB, Bool abMenu) ;aiMessage is the mess
 				elseif aiB == 4 ;Summary
 					aiMessage = 5
 				elseif aiB == 6 ;Debug give xp
-					_cfsHeldXPFloatGV.SetValue(_cfsHeldXPFloatGV() + 100.0)
-					WC.UpdateWidget(_cfsHeldXPFloatGV() as Int)
+					_cfsHeldXPFloatGV.SetValue(_cfsHeldXPFloatGV.GetValue() + 100.0)
+					WC.UpdateWidget(_cfsHeldXPFloatGV.GetValue() as Int)
 					playerRef.AddSpell(_cfsSkillGainKillerAb, false)
 				else
 					abMenu = false
 					playerRef.AddSpell(_cfsSkillGainKillerAb, false)
+				endif
 			elseif aiMessage == 1 ;Combat options Menu, show the combat menu and send it the tempExp, Stat cost and current increment values per combat skill
 				_cfsLevelMenuCombat.show(_tempExp, cfshStatCost, archInc as float, blocInc as float, harmInc as float, onehInc as float, smithInc as float, twohInc as float)
 				if aiB == 0 && _tempExp >= cfshStatCost ;archery
 					archInc += 1 ;increase the increment variable for later commit
 					stXP() ;reduce remaining tempXP and add a simulated step to stat cost formula
 					statCost() ;recalculate stat cost
-				ElseIf == 1 && _tempExp >= cfshStatCost ;block
+				ElseIf aiB == 1 && _tempExp >= cfshStatCost ;block
 					blocInc += 1
 					stXP()
 					statCost()
-				ElseIf == 2 && _tempExp >= cfshStatCost ;heavy armor
+				ElseIf aiB == 2 && _tempExp >= cfshStatCost ;heavy armor
 					harmInc += 1
 					stXP()
 					statCost()
-				ElseIf == 3 && _tempExp >= cfshStatCost ;two handed
+				ElseIf aiB == 3 && _tempExp >= cfshStatCost ;two handed
 					twohInc += 1
 					stXP()
 					statCost()
-				ElseIf == 4 && _tempExp >= cfshStatCost ;one handed
+				ElseIf aiB == 4 && _tempExp >= cfshStatCost ;one handed
 					onehInc += 1
 					stXP()
 					statCost()
-				ElseIf == 5 && _tempExp >= cfshStatCost ;smithing
+				ElseIf aiB == 5 && _tempExp >= cfshStatCost ;smithing
 					smithInc += 1
 					stXP()
 					statCost()
-				elseif == 6 ;back
+				elseif aiB == 6 ;back
 					aiMessage = 0
 				else
 					aiMessage = 8 ;insufficient experience
 				endIf
 			elseif aiMessage == 2 ;Magic options menu
-				_cfsLevelMenuMagic.show(_tempExp, cfshStatCost, altInc as float, conjInc as float, destInc as float, enchInc as float, illuInc as float, restInc as float)
+				_cfsLevelMenuMagic.show(_tempExp, cfshStatCost, alteinc as float, conjInc as float, destInc as float, enchInc as float, illuInc as float, restInc as float)
 				if aiB == 0 && _tempExp >= cfshStatCost ;alteration
-					altInc += 1
+					alteinc += 1
 					stXP()
 					statCost()
 				elseif aib == 1 && _tempExp >= cfshStatCost ;conjuration
@@ -141,7 +142,7 @@ function SpendXPMenu(Int aiMessage, Int aiB, Bool abMenu) ;aiMessage is the mess
 					restInc += 1
 					stXP()
 					statCost()
-				elseif == 6 ;back
+				elseif aiB == 6 ;back
 					aiMessage = 0
 				else
 					aiMessage = 8 ;insufficient experience
@@ -172,10 +173,11 @@ function SpendXPMenu(Int aiMessage, Int aiB, Bool abMenu) ;aiMessage is the mess
 					speeInc += 1
 					stXP()
 					statCost()
-				elseif == 6 ;back
+				elseif aiB == 6 ;back
 					aiMessage = 0
 				else
 					aiMessage = 8 ;insufficient experience
+				endIf
 			elseif aiMessage == 5 ;summary
 				_cfsLevelMenuSumm1.show(archInc as float, blocInc as float, harmInc as float, onehInc as float, smithInc as float, twohInc as float) ;Combat summary, display all selected skill increments
 				if aiB == 0 ;confirm
@@ -188,7 +190,7 @@ function SpendXPMenu(Int aiMessage, Int aiB, Bool abMenu) ;aiMessage is the mess
 					aiMessage = 7
 				endIf
 			elseif aiMessage == 6
-				_cfsLevelMenuSumm2.show(altInc as float, conjInc as float, destInc as float, enchInc as float, illuInc as float, restInc as float) ;Magic summary
+				_cfsLevelMenuSumm2.show(alteinc as float, conjInc as float, destInc as float, enchInc as float, illuInc as float, restInc as float) ;Magic summary
 				if aiB == 0 ;confirm
 					aiMessage = 9
 				elseif aiB == 1 ;back
@@ -197,6 +199,7 @@ function SpendXPMenu(Int aiMessage, Int aiB, Bool abMenu) ;aiMessage is the mess
 					aiMessage = 5
 				elseif aiB == 3 ;Stealth
 					aiMessage = 7
+				endIf
 			elseif aiMessage == 7
 				_cfsLevelMenuSumm3.show(alchInc as float, larmInc as float, lockinc as float, pickInc as float, sneaInc as float, speeInc as float)
 				if aiB == 0 ;confirm
@@ -207,8 +210,10 @@ function SpendXPMenu(Int aiMessage, Int aiB, Bool abMenu) ;aiMessage is the mess
 				 	aiMessage = 5
 				elseif aiB == 3 ;magic
 					aiMessage = 6
+				endIf
 			elseif aiMessage == 9 ;commit changes by increments and close out
 			elseIf aiMessage == 8
+			endIf
 				if archInc != 0
 					game.incrementskillby("marksman", archInc)
 				endIf
@@ -270,7 +275,6 @@ function SpendXPMenu(Int aiMessage, Int aiB, Bool abMenu) ;aiMessage is the mess
 			else
 				aiMessage = 0
 			endif
-		endIf
 	endWhile
 endFunction
 
@@ -280,23 +284,24 @@ Function stXP()
 endFunction
 
 Function statCost() ;add all current skill values/temporary cost increaser and do math
-	Int _arch = playerref.GetBaseAV("Marksman")
-	Int _bloc = playerref.GetBaseAV("Block")
-	Int _harm = playerref.GetBaseAV("HeavyArmor")
-	Int _oneh = playerref.GetBaseAV("OneHanded")
-	Int _smit = playerref.GetBaseAV("Smithing")
-	Int _twoh = playerref.GetBaseAV("TwoHanded")
-	Int _alte = playerref.GetBaseAV("Alteration")
-	Int _conj = playerref.GetBaseAV("Conjuration")
-	Int _dest = playerref.GetBaseAV("Destruction")
-	Int _ench = playerref.GetBaseAV("Enchanting")
-	Int _illu = playerref.GetBaseAV("Illusion")
-	Int _rest = playerref.GetBaseAV("Restoration")
-	Int _alch = playerref.GetBaseAV("Alchemy")
-	Int _larm = playerref.GetBaseAV("LightArmor")
-	Int _lock = playerref.GetBaseAV("Lockpicking")
-	Int _pick = playerref.GetBaseAV("Pickpocket")
-	Int _snea = playerref.GetBaseAV("Sneak")
-	Int _spee = playerref.GetBaseAV("Speechcraft")
-	cfshStatCost = ((_arch + _bloc + _harm + _oneh + _smit + _twoh + _alte + _conj + _dest + _ench + _illu + _rest + _alch + _larm + _lock + _pick + _snea + _spee + _tempSCost) / 20) ^2
+	float _arch = playerref.GetBaseAV("Marksman")
+	float _bloc = playerref.GetBaseAV("Block")
+	float _harm = playerref.GetBaseAV("HeavyArmor")
+	float _oneh = playerref.GetBaseAV("OneHanded")
+	float _smit = playerref.GetBaseAV("Smithing")
+	float _twoh = playerref.GetBaseAV("TwoHanded")
+	float _alte = playerref.GetBaseAV("Alteration")
+	float _conj = playerref.GetBaseAV("Conjuration")
+	float _dest = playerref.GetBaseAV("Destruction")
+	float _ench = playerref.GetBaseAV("Enchanting")
+	float _illu = playerref.GetBaseAV("Illusion")
+	float _rest = playerref.GetBaseAV("Restoration")
+	float _alch = playerref.GetBaseAV("Alchemy")
+	float _larm = playerref.GetBaseAV("LightArmor")
+	float _lock = playerref.GetBaseAV("Lockpicking")
+	float _pick = playerref.GetBaseAV("Pickpocket")
+	float _snea = playerref.GetBaseAV("Sneak")
+	float _spee = playerref.GetBaseAV("Speechcraft")
+	float statSum = (_arch + _bloc + _harm + _oneh + _smit + _twoh + _alte + _conj + _dest + _ench + _illu + _rest + _alch + _larm + _lock + _pick + _snea + _spee + _tempSCost) / 20
+	cfshStatCost = math.pow(statSum, 2)
 EndFunction
