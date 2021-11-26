@@ -5,6 +5,7 @@ ObjectReference Property cfsReturnXMarker auto
 Actor Property playerref auto
 
 
-Event OnActivate(ObjectReference a)
+Event OnTriggerEnter(ObjectReference a)
+  debug.notification("entered return trigger")
   a.moveto(cfsReturnXMarker)
 endevent
