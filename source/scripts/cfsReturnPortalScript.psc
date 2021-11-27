@@ -6,6 +6,6 @@ Actor Property playerref auto
 
 
 Event OnTriggerEnter(ObjectReference a)
-  debug.notification("entered return trigger")
+  ;debug.notification("entered return trigger")
   a.moveto(cfsReturnXMarker)
 endevent

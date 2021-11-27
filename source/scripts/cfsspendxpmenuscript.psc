@@ -35,7 +35,7 @@ endFunction
 ;rewrite for new refactor and new formula
 
 function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = true) ;aiMessage is the message box var, aiB is the var for menu choices, abMenu bool for menu is open
-	debug.Notification("spendxpmenu function")
+	;debug.Notification("spendxpmenu function")
 	;disable controls then enable (I don't remember why we do this, it's in the messagebox menu tutorial i think)
 	game.DisablePlayerControls(false, false, false, false, false, true, true, false, 0)
 	game.EnablePlayerControls(false, false, false, false, false, true, true, true, 0)
@@ -67,7 +67,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = true) ;aiMess
 	playerRef.RemoveSpell(_cfsSkillGainKillerAb)
 	;While the menu bool is true open the Menu
 	While abMenu
-		debug.Notification("abMenu is" + abMenu)
+		;debug.Notification("abMenu is" + abMenu)
 		if aiB != -1 ;Catch the int somehow dropping below 0
 			if aiMessage == 0 ;root Menu
 				aiB = cfsLevelMenuRoot.show(_tempExp, cfshStatCost) ;show the root menu and supply the tempExp and statCost variables, also this other stuff?

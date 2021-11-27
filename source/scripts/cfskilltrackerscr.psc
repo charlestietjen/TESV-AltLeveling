@@ -3,6 +3,8 @@ scriptName cfsKillTrackerScr extends quest
 ;-- Properties --------------------------------------
 actor property playerRef auto
 
+LocationRefType property Boss auto
+
 ;Faction formlist tierlist
 ;E: Prey Fox Hare Goat Farmanimals horker skeever
 ;D: Wolf Slaughterfish Silverhand Skeleton vampirethrall bandit 
@@ -18,45 +20,10 @@ Formlist property _cfsBTierList auto ;base xp 150
 Formlist property _cfsATierList auto ;base xp 500
 Formlist property _cfsSTierList auto ;base xp 1000
 
-; This formlist will be checked first, we'll use this initially to assign reasonable experience values to actors with underwhelming level adjustments, Mercer Frey for example.
-;Post 1.0 we'll use this list to award specific experience values but also to push unique rewards to the players inventory
+; This formlist will be checked first to award xp that would be inappropriate when picked up by faction (unique actors, leveled bosses etc.)
 Formlist property _cfsCaseByCase auto
 
-;this list is purely for my own reference for 'boss' type skyrim actors, script will only utilize formlists in functions
-;actorbase property WinterholdJailFrostAtronach auto
-;actorbase property dunMistwatchFjola auto
-;actorbase property dunAnsilvundLuahAlSkaven auto
-;actorbase property Linwe auto
-;actorbase property MS06Potema auto
-;actorbase property MS06NecromancerLeader auto
-;actorbase property dunVolskyggeDragonPriest01 auto
-;actorbase property TitusMedeII auto
-;actorbase property DLC1HarkonCombat auto
-;actorbase property DLC1HarkonCombatMagic auto
-;actorbase property DLC1HarkonCombatMelee auto
-;actorbase property DLC1Harkon auto
-;actorbase property MG07LabyrinthianDragonPriest auto
-;actorbase property MQ104Dragon auto
-;actorbase property dunShearpointKrosisDragonPriest auto
-;actorbase property MercerFrey auto
-;actorbase property dunFrostmereCryptPaleLady auto
-;actorbase property Ianusu auto
-;actorbase property DLC1AlthadanVyrthur auto
-;actorbase property Drascua auto
-;actorbase property dunValthumeHevnoraak auto
-;actorbase property DA13Orchendor auto
-;actorbase property dunRagnOtar auto
-;actorbase property dunForelhostDragonPriestRahgot auto
-;actorbase property DLC2EbonyWarrior auto
-;actorbase property Paarthurnax auto
-;actorbase property EncC06WolfSpirit auto
-;actorbase property Ancano auto
-;actorbase property Karstaag auto
-;actorbase property DLC2SV01DragonPriestBoss auto
-;actorbase property DLC2dunHaknir auto
-;actorbase property DLC2AcolyteAhzidal auto
-;actorbase property DLC2AcolyteZahkriisos auto
-;actorbase property DLC2AcolyteDukaan auto
+int[] property XPTable auto
 
 Int property sXP = 1000 auto
 Int property aXP = 500 auto
@@ -75,10 +42,12 @@ cfsspendxpmenuscript property MenuScript auto
 Float property XPIncr auto hidden
 Float property gXP auto hidden
 
-;calculate how much to increment XP, we simply multiply the XPIncr value at this point defined by grabxp function and math it to another value
+;recalculate xp based on level multipliers. Under level 5 results in base xp rewards. Starting at level 5 we use player level and victim level to determine a multiplier for xp
+;higher player levels give a larger boost, hopefully keeping pace w/skyrim's leveled world behavior 
 function XPCalc(Float fXP, Float pcL, Float vL)
-	XPIncr = ((vL / 5) + 1) * XPIncr
-	;debug.notification("Awarded: " + XPIncr)
+	if pcL > 5
+		XPIncr = ((pcL / 5) + (vL / 10)) * XPIncr
+	endif
 endFunction
 
 ;run when the player is responsible for a kill actor event
@@ -89,25 +58,11 @@ function OnStoryKillActor(objectreference victim, objectreference killer, Locati
 	grabxp(vic)
 	XPCalc(0, playerref.getlevel(), vic.getlevel())
 	;Send the XP increment to the menu script
+	Debug.Notification("Enemy: " + vic + "Level: " + vic.getlevel() + "XP: " + XPIncr)
+	Debug.Trace("CFSAL: Enemy: " + vic + "Level: " + vic.getlevel() + "XP: " + XPIncr + "Player level: " + playerref.getlevel())
 	MenuScript.IncXP(XPIncr)
 	self.stop()
 endFunction
-
-;faction[] fList = new faction[2]
-;fList[0] = _cfsSTierList
-;fList[1] = _cfsATierList
-;int[] xpArray = new int[2]
-;xpArray[0] = 1000
-;xpArray[1] = 800
-;i = fList.GetSize()
-;while i 
-;	i -= 1
-;	j = fList[i].GetSize()
-;	vFaction = fList[i].GetAt(j) as Faction
-;	if k.isinfaction(vFaction)
-;		XPIncr = xpArray[i]
-;	endif
-;EndWhile
 
 ;figure out who died
 function grabxp(actor k) ;
@@ -117,8 +72,7 @@ function grabxp(actor k) ;
 		i -= 1
 		actorbase uactor = _cfsCaseByCase.GetAt(i) As Actorbase 
 		if k.getactorbase() == uactor
-			;debug.notification("grabxp: caught a case by case, should see no other gxp function notifications")
-			XPIncr = 500 ;awardxp, placeholder, final xp awards for case by case should be stored in an array where index matches appropriate formlist index entries
+			XPIncr = XPTable[i]
 		endif
 	EndWhile
 	Faction vFaction = none
@@ -154,62 +108,4 @@ function grabxp(actor k) ;
 		debug.notification("unregistered kill detected")
 		XPIncr = dXP
 	endif
-;	While i && XPIncr == 0
-;		i -= 1
-;		actorbase uactor = _cfsCaseByCase.GetAt(i) As Actorbase 
-;		if k.getactorbase() == uactor
-;			XPIncr = 500 ;awardxp, placeholder, final xp awards for case by case should be stored in an array where index matches appropriate formlist index entries
-;		endif
-;	EndWhile
-;	i = _cfsSTierList.GetSize()
-;	While i && XPIncr == 0
-;		i -= 1
-;		vFaction = _cfsSTierList.GetAt(i) as Faction 
-;		if k.isinfaction(vFaction)
-;			XPIncr = 1000;awardxp
-;		endif 
-;	endwhile
-;	i = _cfsATierList.GetSize()
-;	While i && XPIncr == 0
-;		i -= 1
-;		vFaction = _cfsATierList.GetAt(i) as faction 
-;		if k.isinfaction(vFaction)
-;			XPIncr = 500 ;awardxp
-;		endif
-;	endwhile
-;	i = _cfsBTierList.GetSize()
-;	While i && XPIncr == 0
-;		i -= 1
-;		vFaction = _cfsBTierList.GetAt(i) as faction 
-;		if k.isinfaction(vFaction)
-;			XPIncr = 150 ;awardxp
-;		endif
-;	endwhile 
-;	i = _cfsCTierList.GetSize()
-;	While i && XPIncr == 0
-;		i -= 1
-;		vFaction = _cfsCTierList.GetAt(i) as faction 
-;		if k.isinfaction(vFaction)
-;			XPIncr = 50 ;awardxp
-;		endif 
-;	endwhile 
-;	i = _cfsDTierList.GetSize()
-;	While i && XPIncr == 0
-;		i -= 1
-;		vFaction = _cfsDTierList.GetAt(i) as faction
-;		if k.isinfaction(vFaction)
-;			XPIncr = 30 ;awardxp
-;		endif 
-;	endwhile
-;	i = _cfsETierList.GetSize()
-;	While i && XPIncr == 0
-;		i -= 1
-;		vFaction = _cfsETierList.GetAt(i) as faction
-;		if k.isinfaction(vFaction)
-;			XPIncr = 1 ;awardxp
-;		endif 
-;	endwhile
-;	if XPIncr == 0
-;		XPIncr = 150 ;awardXP
-;	endif
 endfunction
