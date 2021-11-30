@@ -42,9 +42,15 @@ Event OnUpdate()
         cfsMUSSpecialDeath.add()
         playerref.pushactoraway(playerref, 1.0)
         FadeToBlackIMOD.apply(1.0)
-        _cfsActiveAshPileQuest.start()
-        utility.wait(2)
-        playerref.moveto(cfsLevelSpaceXMarker)
+        if _cfsActiveAshPileQuest.isrunning()
+            _cfsActiveAshPileQuest.setstage(20)
+            _cfsActiveAshPileQuest.setobjectivefailed(2)
+            _cfsActiveAshPileQuest.stop()
+            _cfsActiveAshPileQuest.start()
+        else
+            _cfsActiveAshPileQuest.start()
+            utility.wait(2)
+        endif
     endif
 EndEvent
 

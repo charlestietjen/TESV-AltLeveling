@@ -26,3 +26,8 @@ store the players held xp value in a quest variable and zero the held xp global
 #make aliases in the alt level main quest for each trigger where the player gets locked in
 #attach a general purpose script to those aliases that moves the xmarker onactivate/ontriggerboxentered/whatever other events need coverage
 #hope that we can dynamically attach to these kinds of objectref without issues
+
+#bonus feature
+an OnStoryKillActor quest where we add any non problematic actor to a formlist if the player kills them
+if the player dies we resurrect the whole formlist 
+when the player location changes we clear the formlist
