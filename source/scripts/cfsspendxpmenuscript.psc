@@ -24,7 +24,6 @@ float property _tempExp auto hidden
 ;-- Functions ---------------------------------------
 
 function IncXP(Float xpValue)
-
 	Float heldxp = _cfsHeldXPFloatGV.GetValue()
 	_cfsHeldXPFloatGV.SetValue(_cfsHeldXPFloatGV.GetValue() + xpValue)
 	WC.UpdateWidget(_cfsHeldXPFloatGV.GetValue() as Int)

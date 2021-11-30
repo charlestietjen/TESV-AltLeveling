@@ -45,8 +45,8 @@ Float property gXP auto hidden
 ;recalculate xp based on level multipliers. Under level 5 results in base xp rewards. Starting at level 5 we use player level and victim level to determine a multiplier for xp
 ;higher player levels give a larger boost, hopefully keeping pace w/skyrim's leveled world behavior 
 function XPCalc(Float fXP, Float pcL, Float vL)
-	if pcL > 5
-		XPIncr = ((pcL / 5) + (vL / 10)) * XPIncr
+	if pcL >= 10
+		XPIncr = ((pcL / 10) + (vL / 10)) * XPIncr
 	endif
 endFunction
 
