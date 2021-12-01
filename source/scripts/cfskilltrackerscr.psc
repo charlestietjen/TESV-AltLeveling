@@ -36,7 +36,7 @@ Int property eXP = 1 auto
 quest property _cfsAlternateLevelQuest auto
 quest property _cfsWidgetQuest auto
 ;script properties
-cfsspendxpmenuscript property MenuScript auto
+cfsAlternateLevelVarsScript property VarsScript auto
 
 ;private properties
 Float property XPIncr auto hidden
@@ -57,10 +57,10 @@ function OnStoryKillActor(objectreference victim, objectreference killer, Locati
 	XPIncr = 0
 	grabxp(vic)
 	XPCalc(0, playerref.getlevel(), vic.getlevel())
-	;Send the XP increment to the menu script
-	Debug.Notification("Enemy: " + vic + "Level: " + vic.getlevel() + "XP: " + XPIncr)
+	;Send the XP increment to the main vars script
+	;Debug.Notification("Enemy: " + vic + "Level: " + vic.getlevel() + "XP: " + XPIncr)
 	Debug.Trace("CFSAL: Enemy: " + vic + "Level: " + vic.getlevel() + "XP: " + XPIncr + "Player level: " + playerref.getlevel())
-	MenuScript.IncXP(XPIncr)
+	VarsScript.IncXP(XPIncr, false)
 	self.stop()
 endFunction
 

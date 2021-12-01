@@ -1,4 +1,4 @@
-Scriptname cfsDeathHandlerEdgeCaseScript extends ObjectReference  
+Scriptname cfsDeathHandlerEdgeCaseScript extends referencealias  
 
 ;properties
 actor property playerref auto 

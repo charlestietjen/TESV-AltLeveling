@@ -18,16 +18,16 @@ message property _cfsLevelMenuSumm3 auto
 message property _cfsLevelMenuNope auto
 message property _cfsLevelMenuSumm2 auto
 
+globalvariable property _cfsLifetimeXPSpent Auto
+
+cfsDeathHandlerScript property DeathScript auto
+cfsAlternateLevelVarsScript property VarsScript auto
+
 ;-- Variables ---------------------------------------
 int property _tempSCost auto hidden
 float property _tempExp auto hidden
+float property _totalCost auto hidden
 ;-- Functions ---------------------------------------
-
-function IncXP(Float xpValue)
-	Float heldxp = _cfsHeldXPFloatGV.GetValue()
-	_cfsHeldXPFloatGV.SetValue(_cfsHeldXPFloatGV.GetValue() + xpValue)
-	WC.UpdateWidget(_cfsHeldXPFloatGV.GetValue() as Int)
-endFunction
 
 ;Menu Function
 
@@ -41,6 +41,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = true) ;aiMess
 	;store the current xp global in a menu only variable, this is for allowing the player to back out and not have to do a bunch of setting etc.
 	_tempExp = _cfsHeldXPFloatGV.GetValue()
 	abMenu = true
+	_totalCost = 0
 	_tempSCost = 0 ;reset the temporary skill cost increase variable
 	StatCost() ;run the skillcost function to display accurate cost on root menu
 	;A smarter dev would probably do these ints in an array but...i'm not smart
@@ -79,10 +80,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = true) ;aiMess
 				elseif aiB == 3 ;tbd
 				elseif aiB == 4 ;Summary
 					aiMessage = 5
-				elseif aiB == 6 ;Debug give xp
-					_cfsHeldXPFloatGV.SetValue(_cfsHeldXPFloatGV.GetValue() + 100.0)
-					WC.UpdateWidget(_cfsHeldXPFloatGV.GetValue() as Int)
-					playerRef.AddSpell(_cfsSkillGainKillerAb, false)
+				elseif aiB == 6 ;Debug option
 				else
 					abMenu = false
 					playerRef.AddSpell(_cfsSkillGainKillerAb, false)
@@ -276,6 +274,8 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = true) ;aiMess
 					game.incrementskillby("speechcraft", speeInc)
 				endIf
 				playerRef.AddSpell(_cfsSkillGainKillerAb, false)
+				float newLifetime = _totalCost + _cfsLifetimeXPSpent.GetValue()
+				_cfsLifetimeXPSpent.SetValue(_totalCost)
 				_cfsHeldXPFloatGV.SetValue(_tempExp)
 				WC.UpdateWidget(_cfsHeldXPFloatGV.GetValue() as Int)
 				abMenu = false
@@ -287,6 +287,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = true) ;aiMess
 endFunction
 
 Function stXP()
+	_totalCost += cfshStatCost
 	_tempExp -= cfshStatCost
 	_tempSCost += 1
 endFunction
