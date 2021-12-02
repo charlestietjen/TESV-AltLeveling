@@ -1,7 +1,10 @@
 Scriptname cfsAlternateLevelVarsScript extends Quest  
 
+;script for storing functions globally for the mod, this quest can be stopped and started for maintenance so it's not appropriate for quest variables to be stored
+;This script also handles sending tracked stats to the UI
+
 ;properties
-formlist property storedEnemies auto
+formlist property _cfsResStoredEnemies auto
 
 globalvariable property _cfsHeldXPFloatGV auto
 globalvariable property _cfsLifetimeXPAcq auto
@@ -19,35 +22,35 @@ string ltLo
 
 ;global mod Functions
 
-function store(objectreference vic)
-    storedEnemies.addform(vic)
-    debug.notification("Storing objectref, count: " + storedEnemies.getsize())
+function store(actor vic)
+    _cfsResStoredEnemies.addform(vic)
+    debug.notification("Storing objectref, count: " + _cfsResStoredEnemies.getsize())
 endfunction
 
 function resorrev(int res)
+    debug.notification("res = " + res)
     if res == 1
         debug.notification("resurrecting actors")
-        int i = storedEnemies.GetSize()
+        int i = _cfsResStoredEnemies.GetSize()
         while i > 0
             i -= 1
-            actor e = storedEnemies.getat(i) as actor 
+            actor e = _cfsResStoredEnemies.getat(i) as actor 
             e.resurrect()
         endwhile
-        storedEnemies.revert()
-    elseif res == 0 && storedEnemies.GetSize() > 0
+        _cfsResStoredEnemies.revert()
+    elseif res == 0 && _cfsResStoredEnemies.GetSize() > 0
         debug.notification("clearing res list")
-        storedEnemies.revert()
-    else
-        debug.notification("none was passed to resorrev function")
+        _cfsResStoredEnemies.revert()
     endif
 endfunction
 
-function IncXP(Float xpValue, bool notrack)
+function IncXP(Float xpValue, bool track)
+    debug.notification("XP increment by: " + xpValue + ", tracked: " + track)
 	Float heldxp = _cfsHeldXPFloatGV.GetValue()
     float ltXP = _cfsLifetimeXPAcq.GetValue()
 	_cfsHeldXPFloatGV.SetValue(_cfsHeldXPFloatGV.GetValue() + xpValue)
 	WC.UpdateWidget(_cfsHeldXPFloatGV.GetValue() as Int)
-    if notrack
+    if track
         _cfsLifetimeXPAcq.SetValue(ltXP + xpValue)
     endif
 endFunction

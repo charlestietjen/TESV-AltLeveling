@@ -1,4 +1,0 @@
-$Lifetime Experience Spent  Lifetime Experience Spent
-$Lifetime Experience Lost   Lifetime Experience Lost
-$Lifetime Experience Acquired   Lifetime Experience Acquired
-$Total Deaths   Total Deaths

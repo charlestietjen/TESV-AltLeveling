@@ -18,14 +18,22 @@ float property droppedxp auto
 ;events
 
 Function dropxp()
+    droppedxp = 0
     debug.notification("dropxp called")
     droppedxp = _cfsHeldXPFloatGV.GetValue()
-    VarsScript.IncXP(-droppedxp, true)
+    bool track = false
+    VarsScript.IncXP(-droppedxp, track)
     cfsXPAshPileRef.moveto(playerref)
     cfsXPAshPileRef.enable()
-    debug.sendanimationevent(playerref, "BleedOutStop")
-    playerref.restoreactorvalue("health", 999)
+    ;debug.sendanimationevent(playerref, "BleedOutStop")
+    int res = 1
+    VarsScript.resorrev(res)
     playerref.moveto(cfsLevelSpaceXMarker)
+    playerref.restoreactorvalue("health", 999)
+    playerref.unequipitem(playerref.getequippedweapon())
+    playerref.unequipitem(playerref.getequippedweapon(true))
+    playerref.unequipspell(playerref.getequippedspell(0), 0)
+    playerref.unequipspell(playerref.getequippedspell(1), 1)
     Utility.Wait(6)
     FadeToBlackIMOD.remove()
 EndFunction
@@ -33,7 +41,9 @@ EndFunction
 Function xpRecover()
     debug.notification("xprecover called")
     cfsXPAshPileRef.disable()
-    VarsScript.IncXP(droppedxp, true)
+    bool track = false
+    VarsScript.IncXP(droppedxp, track)
+    droppedxp = 0
 EndFunction
 
 Function clearXP()

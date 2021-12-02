@@ -1,5 +1,8 @@
 scriptName cfsspendxpmenuscript extends Quest
 
+; bless this mess.
+; script for the level up menu, needs to be refactored again for readability and performance but is perfectly functional as is
+
 ;-- Properties --------------------------------------
 message property _cfsLevelMenuCombat auto
 cfsxpwidgetcore property WC auto
@@ -31,7 +34,7 @@ float property _totalCost auto hidden
 
 ;Menu Function
 
-;rewrite for new refactor and new formula
+;rewritten for new refactor and new formula, needs a second refactor pass tbh
 
 function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = true) ;aiMessage is the message box var, aiB is the var for menu choices, abMenu bool for menu is open
 	;debug.Notification("spendxpmenu function")
