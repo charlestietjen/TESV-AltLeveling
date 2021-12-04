@@ -1,0 +1,4 @@
+﻿class enchantingOb extends cfslevelupmenu
+
+{
+	}

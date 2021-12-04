@@ -1,0 +1,4 @@
+﻿class optionArrowOb extends cfslevelupmenu
+
+{
+	}

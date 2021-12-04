@@ -1,0 +1,4 @@
+﻿class conjurationOb extends cfslevelupmenu
+
+{
+	}

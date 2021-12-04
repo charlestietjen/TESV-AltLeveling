@@ -1,0 +1,4 @@
+﻿class smithingOb extends cfslevelupmenu
+
+{
+	}

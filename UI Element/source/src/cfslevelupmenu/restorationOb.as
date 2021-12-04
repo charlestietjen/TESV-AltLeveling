@@ -1,0 +1,4 @@
+﻿class restorationOb extends cfslevelupmenu
+
+{
+	}

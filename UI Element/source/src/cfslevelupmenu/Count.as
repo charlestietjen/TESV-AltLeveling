@@ -1,0 +1,4 @@
+﻿class Count extends cfslevelupmenu
+
+{
+	}

@@ -1,0 +1,4 @@
+﻿class lockpickingOb extends cfslevelupmenu
+
+{
+	}

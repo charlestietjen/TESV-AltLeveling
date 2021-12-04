@@ -1,0 +1,260 @@
+Language	English	French	German	Italian	Spanish	Czech	Polish	Russian	Japanese
+$ALL	ALL	TOUS	ALLE	TUTTO	TODO	VŠECHNO	WSZYSTKIE	ВСЕ	全て
+$FILTER	FILTER	FILTRE	FILTER	FILTRO	FILTRO	FILTR	FILTR	ФИЛЬТР	フィルタ
+									
+$STOLEN	STOLEN	VOLÉ	GESTOHLEN	RUBATO	ROBADO	KRADENÉ	SKRADZIONE	УКРАДЕНО	盗品
+$EQUIPPED	EQUIPPED	ÉQUIPÉ	AUSGERÜSTET	EQUIPAGGIATO	EQUIPADO	POUŽÍVANÉ	WYPOSAŻONE	НАДЕТО	装備品
+$ENCHANTED	ENCHANTED	ENCHANTÉ	VERZAUBERT	INCANTATO	ENCANTADO	OČAROVANÉ	ZACZAROWANE	ЗАЧАРОВАНО	エンチャント
+$V/W	V/W	V/P	W/G	V/P	V/P	C/H	C/W	Ц/В	金額/重量
+$VALUE/WEIGHT	VALUE/WEIGHT	VALEUR/POIDS	WERT/GEWICHT	VALORE/PESO	VALOR/PESO	CENA/HMOTNOST	CENA/WAGA	ЦЕНА/ВЕС	金額/重量
+$SPELL COST	SPELL COST	COÛT	KOSTEN	COSTO	COSTE DE HECHIZO	MANA	KOSZT CZARU	СТОИМОСТЬ	コスト
+$FIRST WORD	FIRST WORD	PREMIER MOT	ERSTES WORT	PRIMA PAROLA	PRIMERO PALABRA	PRVNÍ SLOVO	PIERWSZY WYRAZ	ПЕРВОЕ СЛОВО	第一の言葉
+$SECOND WORD	SECOND WORD	DEUXIÈME MOT	ZWEITES WORT	SECONDA PAROLA	SEGUNDA PALABRA	DRUHÉ SLOVO	DRUGI WYRAZ	ВТОРОЕ СЛОВО	第二の言葉
+$THIRD WORD	THIRD WORD	TROISIÈME MOT	DRITTES WORT	TERZA PAROLA	TERCERA PALABRA	TŘETÍ SLOVO	TRZECI WYRAZ	ТРЕТЬЕ СЛОВО	第三の言葉
+$SCHOOL	SCHOOL	ÉCOLE	MAGIESCHULE	SCUOLA	ESCUELA	ŠKOLA	SZKOŁA	ШКОЛА	系統
+$SKILL LEVEL	SKILL LEVEL	NIVEAU	FERTIGKEITSSTUFE	LIVELLO	NIVEL DE HAB	ÚROVEŇ	POZIOM	УРОВЕНЬ НАВЫКА	スキルレベル
+$TIME LEFT	TIME LEFT	TEMPS RESTANT	VERBLEIBENDE ZEIT	TEMPO RIMANENTE	TIEMPO RESTANTE	VYPRŠÍ ZA	POZOSTAŁY CZAS 	ОСТАВШЕЕСЯ ВРЕМЯ	残り時間
+$SOURCE	SOURCE	ORIGINE	QUELLE	ORIGINE	ORIGEN	ZDROJ	ŹRÓDŁO	ИСТОЧНИК	効果元
+$FAVORITE	FAVORITE	FAVORIS	FAVORIT	PREFERITO	FAVORITO	OBLÍBENÉ	ULUBIONE	ИЗБРАННОЕ	お気に入り
+$TYPE	TYPE	TYPE	TYP	TIPO	TIPO	TYP	TYP	ТИП	種別
+$MATERIAL	MATERIAL	MATÉRIAU	MATERIAL	MATERIALE	MATERIAL	MATERIÁL	MATERIAŁ	МАТЕРИАЛ	材料
+$MAT	MAT	MAT	MAT	MAT	MAT	MAT	MAT	МАТ	材料
+$CLASS	CLASS	CLASSE	KLASSE	CLASSE	CLASE	TŘÍDA	KLASA	КЛАСС	分類
+$MAGNITUDE	MAGNITUDE	MAGNITUDE	STÄRKE	MAGNITUDO	MAGNITUD	SÍLA	WIELKOŚĆ	ВЕЛИЧИНА	効力
+$MAG	MAG	MAG	STÄ	MAG	MAG	SIL	WLK	ВЕЛ	効力
+$DURATION	DURATION	DURÉE	DAUER	DURATA	DURACIÓN	TRVÁNÍ	CZAS TRWANIA	ПРОДОЛЖИТЕЛЬНОСТЬ	期限
+$DUR	DUR	DUR	DAU	DUR	DUR	TRV	TRW	ПРОД	期限
+$TIME	TIME	TEMPS	ZEIT	TEMPO	TIEMPO	ČAS	CZAS	ВРЕМЯ	時間
+$DAM	DAM	DOMM	SCHA	DANNI	DAÑO	POŠK	OBR	УРОН	ダメージ
+$WGT	WGT	PDS	GEW	PESO	PESO	HMOT	WAG	ВЕС	重量
+$VAL	VAL	VAL	WERT	VAL	VAL	CENA	CEN	ЦЕНА	金額
+$ARM	ARM	ARM	RÜST	ARM	ARM	ZBR	ZBR	БРОНЯ	防御
+$WEAPONS	WEAPONS	ARMES	WAFFEN	ARMI	ARMAS	ZBRANĚ	BROŃ	ОРУЖИЕ	武器
+$AMMO	AMMO	AMMO	MUNITION	MUNIZIONI	MUNICIONES	MUNICE	AMUNICJA	БОЕПРИПАСЫ	弾薬
+$EFFECT	EFFECT	EFFET	EFFEKT	EFFETTO	EFECTO	ÚČINEK	EFEKT	ВЛИЯНИЕ	影響
+									
+$Armor	Armor	Armure	Rüstung	Armatura	Armadura	Zbroj	Zbroja	Защита	防具
+$None	None	Aucun	Kein	Nessuno	Ninguno	Nic	Nic	Нет	なし
+$Light	Light	Légère	Leicht	Leggera	Ligera	Lehká z.	Lekka	Легкие	軽装
+$Heavy	Heavy	Lourde	Schwer	Pesante	Pesada	Těžká z.	Ciężka	Тяжелые	重装
+$Clothing	Clothing	Vêtements	Kleidung	Indumento	Ropa	Oblečení	Ubranie	Ткань	衣服
+$Jewelry	Jewelry	Joaillerie	Schmuck	Gioielleria	Joyería	Šperk	Biżuteria	Драгоц.	宝飾品
+									
+$Body	Body	Torse	Körper	Petto	Torso	Hrud'	Ciało	Тело	胴
+$Head	Head	Tête	Kopf	Testa	Cabeza	Hlava	Głowa	Голова	頭
+$Hands	Hands	Mains	Hände	Braccia	Manos	Ruce	Dłonie	Руки	手
+$Forearms	Forearms	Avant-bras	Unterarme	Avambracci	Antebrazos	Předloktí	Przedramiona	Предплечья	腕
+$Feet	Feet	Pieds	Füße	Piedi	Pies	Nohy	Stopy	Ноги	足
+$Calves	Calves	Jambes	Unterschenkel	Gambe	Piernas	Lýtka	Łydki	Голень	脚
+$Shield	Shield	Bouclier	Schild	Scudo	Escudo	Štít	Tarcza	Щит	盾
+$Amulet	Amulet	Amulette	Amulett	Amuleto	Amuleto	Amulet	Amulet	Ожерелье	アミュレット
+$Ring	Ring	Anneau	Ring	Anello	Anillo	Prsten	Pierścień	Кольцо	指輪
+$Mask	Mask	Masque	Maske	Maschera	Máscara	Maska	Maska	Маска	仮面
+$Circlet	Circlet	Couronne	Diadem	Tiara	Aro	Čelenka	Diadem	Обруч	サークレット
+$Ears	Ears	Oreilles	Ohren	Orecchie	Orejas	Uši	Uszy	Уши	耳
+$Tail	Tail	Queue	Schwanz	Coda	Capa	Ocas	Ogon	Хвост	尻尾
+									
+$Grand	Grand	Puissant	Mächtig						
+$Greater	Greater	Grand	Groß						
+$Common	Common	Ordinaire	Gewöhnlich						
+$Lesser	Lesser	Petit	Klein						
+$Petty	Petty	Minuscule	Winzig						
+									
+$Weapon	Weapon	Arme	Waffe	Arma	Arma	Zbraň	Broń	Оружие	武器
+$Melee	Melee	Corps à corps	Nahkampf	Corpo a Corpo	Cuerpo a Cuerpo	Pěsti	Pięści	Ближ. бой	挌闘
+$Sword	Sword	Épée	Schwert	Spada	Espada	Meč	Miecz	Меч	剣
+$Dagger	Dagger	Dague	Dolch	Pugnale	Daga	Dýka	Sztylet	Кинжал	ダガー
+$War Axe	War Axe	Hache	Kriegsaxt	Ascia	Hacha de guerra	Válečná Sekera	Topór Wojenny	Боевой топор	片手斧
+$Mace	Mace	Masse	Streitkolben	Mazza	Maza	Palcát	Buława	Булава	メイス
+$Greatsword	Greatsword	Espadon	Zweihänder	Spadone	Mandoble	Obouruční Meč	Wielki Miecz	Двуручный меч	グレートソード
+$Warhammer	Warhammer	Marteau	Kriegshammer	Martello	Martillo	Kladivo	Młot Bojowy	Боевой молот	戦鎚
+$Battleaxe	Battleaxe	Hache de guerre	Streitaxt	Ascia	Hacha de combate	Bojová Sekera	Topór Bojowy	Секира	両手斧
+$Bow	Bow	Arc	Bogen	Arco	Arco	Luk	Łuk	Лук	弓
+$Staff	Staff	Bâton	Stab	Bastone	Bastón	Hůl	Kostur	Посох	杖
+$Crossbow	Crossbow	Arbalète	Armbrust	Balestra	Ballesta	Kuše	Kusza	Арбалет	クロスボウ
+$Spear	Spear	Lance	Speer	Lancia	Lanza	Kopí	Włócznia	Копьё	槍
+$Pickaxe	Pickaxe	Pioche	Spitzhacke	Piccone	Pico	Krumpáč	Kilof	Кирка	つるはし
+$Wood Axe	Wood Axe	Hache de bûcheron	Holzaxt	Accetta del Taglialegna	Hacha de Leñador	Sekera na dřevo	Siekiera Drwala	Колун	木こりの斧
+									
+$Arrow	Arrow	Flèche	Pfeil	Freccia	Flecha	Šíp	Strzała	Стрела	矢
+$Bolt	Bolt	Carreau	Bolzen	Dardo	Virote	Šipka	Bełt	Болт	ボルト
+									
+$Potion	Potion	Potion	Trank	Pozione	Poción	Lektvar	Mikstura	Зелье	水薬
+$Poison	Poison	Poison	Gift	Veleno	Veneno	Jed	Trucizna	Яд	毒薬
+$Food	Food	Nourriture	Essen	Cibo	Comida	Jídlo	Jedzenie	Еда	食料
+$Drink	Drink	Boisson	Getränk	Bevanda	Bebida	Pití	Napój	Напиток	飲料
+									
+$Scroll	Scroll	Parchemin	Schriftrolle	Pergamena	Pergamino	Svitek	Zwój	Свиток	巻物
+$Book	Book	Livre	Buch	Libro	Libro	Kniha	Książka	Книга	書物
+$Spell Tome	Spell Tome	Livre de sort	Zauberbuch	Libro di Incantesimi	Grimorio	Kniha Kouzel	Księga Czaru	Том заклинаний	呪文の書
+$Recipe	Recipe	Recette	Rezept	Ricetta	Receta	Recept	Przepis	Рецепт	レシピ
+$Note	Note	Note	Notiz	Nota	Nota	Poznámka	Notatka	Записка	ノート
+$Map	Map	Carte	Karte	Mappa	Mapa	Mapa	Mapa	Карта	地図
+									
+$Ingredient	Ingredient	Ingrédient	Zutat	Ingrediente	Ingrediente	Přísada	Składnik	Ингредиент	材料
+									
+$Misc	Misc	Divers	Diverses	Varie	Varios	Různé	Pozostałe	Разное	その他
+$Lockpick	Lockpick	Crochet	Dietrich	Grimaldello	Ganzúa	Šperhák	Wytrych	Отмычка	ロックピック
+$Gem	Gem	Gemme	Edelstein	Gemma	Gema	Drahokam	Klejnot	Драг. камень	宝石
+$Tool	Tool	Outil	Werkzeug	Utensile	Herramienta	Nástroj	Narzędzie	Инструмент	道具
+$Remains	Remains	Restes	Überreste	Resti	Restos	Pozůstatky	Szczątki	Останки	遺骨
+$Leather	Leather	Cuir	Leder	Pelle	Cuero	Kůže	Skórzany	Кожа	革
+$Strips	Strips	Bandes	Streifen	Strisce	Tiras	Odřezky	Paski	Полоски кожи	ひも
+$Hide	Hide	Peau	Haut	Pelle	Piel	Useň	Skóra	Шкура	皮
+$Ore	Ore	Minerai	Erz	Minerale	Mineral	Ruda	Ruda	Руда	鉱石
+$Ingot	Ingot	Lingot	Barren	Lingotto	Lingote	Ingot	Sztaba	Слиток	インゴット
+$Claw	Claw	Griffe	Klaue	Artiglio	Garra	Spár	Szpon	Коготь	爪
+$Clutter	Clutter	Autres	Zeug	Altro	Otros	Krámy	Klamoty	Хлам	雑貨
+$Torch	Torch	Torche	Fackel	Torcia	Antorcha	Pochodeň	Pochodnia	Факел	たいまつ
+$Key	Key	Clé	Schlüssel	Chiave	Llave	Klíč	Klucz	Ключ	鍵
+$Soul Gem	Soul Gem	Gemme spirituelle	Seelenstein	Gemma Dell'Anima	Gema de Alma	Kámen duší	Klejnot Duszy	Камень Душ	魂石
+$Firewood	Firewood	Feu de bois	Feuerholz	Legna da Ardere	Leña	Dřevo	Drewno Opałowe	Полено	薪
+$Gold	Gold	Or	Gold	Oro	Oro	Zlato	Złoto	Золото	ゴールド
+$Artifact	Artifact	Artefact	Artefakt	Artefatto	Artefacto	Artefakt	Artefakt	Артефакт	アーティファクト
+$Toy	Toy	Jouet	Spielzeug	Giocattolo	Juguete	Hračka	Zabawka	Игрушка	玩具
+$House Part	House Part	Partie de maison	Hausbau	Parte della Casa	Parte de la Casa	Část domu	Część Domu	Часть Дома	建材
+									
+$Spell	Spell	Sort	Zauber	Incantesimo	Hechizo	Kouzlo	Zaklęcie	Заклинание	スペル
+$Alteration	Alteration	Altération	Veränderung	Alterazione	Alteración	Proměna	Przemiana	Изменение	変性
+$Destruction	Destruction	Destruction	Zerstörung	Distruzione	Destrucción	Ničení	Zniszczenie	Разрушение	破壊
+$Illusion	Illusion	Illusion	Illusion	Illusione	Ilusión	Iluze	Iluzja	Иллюзии	幻惑
+$Restoration	Restoration	Restauration	Wiederherstellung	Recupero	Restauración	Obnovení	Przywrócenie	Восстановление	回復
+									
+$Other	Other	Autre	Andere	Altro	Otros	Jiné	Inne	Другое	その他
+$Magical	Magical	Magique	Magisch	Magico	Mágica	Magické	Magiczny	Магическое	魔法
+$Daedric	Daedric	Daedrique	Daedrisch	Daedrico	Daédrica	Daedrické	Daedryczny	Даэдрическое	デイドラ
+$Dragonplate	Dragonplate	Plates de dragon	Drachenknochen	Piastre di Drago	Placas de Dragón	Dračí pláty	Smoczy Płytowy	Драконье Панцирное	ドラゴンプレート
+$Nightingale	Nightingale	Rossignol	Nachtigall	Nightingale	Ruiseñor	Slavíci	Słowiczy	Соловьиное	ナイチンゲール
+$Ebony	Ebony	Ébonite	Ebenerz	Ebano	Ébano	Ebenit	Ebonowy	Эбонитовое	黒檀
+$Dragonscale	Dragonscale	Écaille de dragon	Drachenschuppen	Scaglie di Drago	Escamas de Dragón	Dračí šupiny	Smoczy Łuskowy	Драконье Чешуйчатое	ドラゴンスケール
+$Orcish	Orcish	Orque	Orkisch	Orchesco	Orca	Orkský	Orkowy	Орочье	オーク
+$Steel Plate	Steel Plate	Plates	Stahlharnisch	Piastre d'Acciaio	Placas de Acero	Ocelové pláty	Stalowy Płytowy	Стальное Пластинчатое	スチールプレート
+$Glass	Glass	Verre	Glas	Vetro	Cristal	Sklo	Szklany	Стеклянное	碧水晶
+$Elven Gilded	Elven Gilded	Dorée elfique	Elfenvergoldet	Elfico dorato	Dorada Élfica	Elfský Zlacený	Elficki Pozłacany	Эльфийское Золоченое	エルフの黄金
+$Dwarven	Dwarven	Dwemer	Dwemer	Nanico	Enana	Trpasličí	Krasnoludzki	Двемерское	ドワーフ
+$Scaled	Scaled	Écaille	Schuppen	Scaglie	Escamas	Šupiny	Łuskowy	Ламеллярное	スケール
+$Steel	Steel	Acier	Stahl	Acciaio	Acero	Ocel	Stalowy	Стальное	鋼鉄
+$Brotherhood	Brotherhood	Confrérie	Bruderschaft	Confraternita	Hermandad	Bratrstvo	Bractwa	Братства	闇の一党
+$Elven	Elven	Elfique	Elfen	Elfico	Élfica	Elfský	Elficki	Эльфийское	エルフ
+$Iron Banded	Iron Banded	Fer bardé	Eisenbebändert	Ferro Laminato	Hierro Bandeado	Železo s pásky	Żelazny Łączony	Прочное Железное	帯鉄
+$Leather	Leather	Cuir	Leder	Pelle	Cuero	Kůže	Skórzany	Кожаное	革
+$Imperial	Imperial	Impérial	Kaiserliche	Imperiale	Imperial	Císařští	Imperialny	Имперское	帝国軍
+$Studded	Studded	Clouté	Vernietet	Borchiato	Tachonada	Okované	Ćwiekowany	Клепаное	鋲付き
+$Fur	Fur	Peau	Fell	Pelliccia	Piel	Useň	Futrzany	Меховое	毛皮
+$Iron	Iron	Fer	Eisen	Ferro	Hierro	Železo	Żelazny	Железное	鉄
+$Stormcloak	Stormcloak	Sombrage	Sturmmantel	Manto della Tempesta	Capa de la Tormenta	Bouřní	Gromowładnych	Братьев Бури	ストームクローク
+$Silver	Silver	Argenté	Silber	Argento	Plata	Stříbro	Srebrny	Серебряное	銀
+$Wood	Wood	Bois	Holz	Legno	Madera	Dřevo	Drewniany	Деревянное	木製
+$Nordic	Nordic	Nordique	Nordisch	Nordico	Nórdica	Severský	Nordycki	Нордское	ノルドの刻印
+$Bonemold	Bonemold	Ossement	Knochen	Ossa Fuse	Molde de Hueso	Bonemold	Bonemold	Костяное	ボーンモールド
+$Chitin	Chitin	Chitine	Chitin	Chitina	Quitina	Chitin	Chitynowy	Хитиновое	キチン
+$Morag Tong	Morag Tong	Morag Tong	Morag Tong	Morag Tong	Morag Tong	Morag Tong	Morag Tong	Мораг Тонг	モラグ・トング
+$Stalhrim	Stalhrim	Stalhrim	Stalhrim	Stalhrim	Stalhrim	Stalhrim	Stalhrim	Сталгримовое	スタルリム
+$Deathbrand	Deathbrand	Balafré	Todesmal	Marchio Mortale	Marca de muerte	Deathbrand	Deathbrand	Клеймо Смерти	デスブランド
+$Draugr	Draugr	Draugr	Draugr	Draugr	Draugr	Draugirský	Draugrowy	Драургское	ドラウグル
+$Draugr Honed	Draugr Honed	Draugr affûtée	Draugr Geschliffen	Draugr Affilata	Draugr Afilada	Draug. ostřený	Draugrowy Naostrzony	Хорошее Драугрское	
+$Falmer	Falmer	Falmer	Falmer	Falmer	Falmer	Falmerský	Falmerski	Фалмерское	ファルメル
+$Falmer Honed	Falmer Honed	Falmer affûtée	Falmer Geschliffen	Falmer Affilata	Falmer Afilada	Falmer. ostřený	Falmerski Naostrzony	Хорошее Фалмерское	
+$Forsworn	Forsworn	Parjure	Abgeschworene	Rinnegato	Renegado	Zapřisáhlí	Renegatów	Изгоев	フォースウォーン
+$Dawnguard	Dawnguard	Garde de l'aube	Dämmerwacht	Dawnguard	Guardia del Alba	Strážci Úsvitu	Dawnguard	Стражи Рассвета	ドーンガード
+$Falmer Hardened	Falmer Hardened	Falmer renforcée	Gehärtete Falmerrüstung	Falmer Pesante	Falmer endurecida	Falmer. tvrzený	Falmerski Wzmocniony	Фалмерское Укрепленное	
+$Hunter	Hunter	Chasseur	Jäger	Cacciatore	Cazador	Lovci	Łowcy	Охотничье	ハンター
+$Vampire	Vampire	Vampire	Vampir	Vampiro	Vampiro	Upíři	Wampirzy	Вампирское	吸血鬼
+$Aetherium	Aetherium	Aetherium	Aetherium	Eterio	Aeterio	Aetherit	Aetherium	Этериевое	エセリウム
+$Dragonbone	Dragonbone	Os de dragon	Drachenknochen	Ossa di Drago	Hueso de Dragón	Dračí kost	Smocza Kość	Драконье костяное	龍骨
+									
+$MOD CONFIGURATION	MOD CONFIGURATION	CONFIGURATION DU MOD	MOD-KONFIGURATION	CONFIGURAZIONE MOD	CONFIGURACIÓN DE MOD	NASTAVENÍ MODŮ	KONFIGURACJA MODÓW	НАСТРОЙКИ МОДОВ	MOD設定
+$Default	Default	Par défaut	Voreinstellung	Predefinito	Por Defecto	Základní	Domyślny	По умолчанию	デフォルト
+$Defaults	Defaults	Par défauts	Voreinstellungen	Predefiniti	Por Defecto	Základní	Domyślne	По умолчанию	デフォルト
+$Search	Search	Chercher	Suchen	Cerca	Buscar	Hledat	Szukaj	Поиск	検索
+$Magic	Magic	Magie	Magie	Magia	Magia	Magie	Magia	Магия	魔法
+$Inventory	Inventory	Inventaire	Inventar	Inventario	Inventario	Inventář	Ekwipunek	Инвентарь	所持品
+$Switch Tab	Switch Tab	Changer d'onglet	Reiter Wechseln	Cambia Scheda	Cambiar Pestaña	Změnit Záložku	Przełącz Kartę	Переключение Вкладок	タブの切り替え
+$Equip Mode	Equip Mode	Gestion d'équipement	Ausrüstungsmodus	Gestisci Equipaggiamento	Modo Equipamiento	Režim použití	Tryb Wyposażenia	Режим Экипировки	装備モード
+$Column	Column	Colonne	Spalte	Colonna	Columna	Sloupek	Kolumna	Колонка	列
+$Order	Order	Trier	Sortierung	Ordina	Ordenar	Řazení	Kolejność	Порядок	ソート
+$Open Slider	Open Slider	Ouvrir le curseur	Schieber Öffnen	Apri Scorrimento	Activar Cursor	Otevřít posuvník	Otwórz Suwak	Открыть Ползунок	スライダーを開く
+$Open Menu	Open Menu	Ouvrir le menu	Menü Öffnen	Apri Menu	Abrir Menu	Otevřít Menu	Otwórz Menu	Открыть Меню	メニューを開く
+$Toggle	Toggle	Activer/Désactiver	Umschalten	Seleziona	Seleccionar	Zaškrtnout	Przełącz	Переключить	トグル
+$Pick Color	Pick Color	Choisir la couleur	Farbauswahl	Seleziona Colore	Seleccionar Color	Vybrat barvu	Wybierz Kolor	Выбор Цвета	色を選択
+$Remap	Remap	Ré-affecter	Neuzuweisen	Riassegna	Reasignar	Přenastavit	Ponowne Przypisywanie	Назначить клавишу	再割り当て
+$Unmap	Unmap	Désaffecter	Zuordnung Aufheben	Dealloca	Desasignar	Odebrat klávesu	Odznacz klawisz	Сбросить значение	
+$Find Location	Find Location	Chercher un lieu	Ort Finden	Cerca Locazione	Descubrir lugar	Najít místo	Znajdź Miejsce	Поиск Локации	
+									
+$General	General	Général	Allgemein	Generale	General	Základní	Ogólne	Общие	一般
+$Favorite Groups	Favorite Groups	Groupes favoris	Favoritengruppen	Gruppi Favoriti	Grupos Favoritos	Oblíbené skupiny 	Aktywne	Группы Избранного	
+$Advanced	Advanced	Avancé	Fortgeschritten	Avanzato	Avanzado	Pokročilé	Zaawansowane	Дополнительно	高度
+									
+$Item List	Item List	Liste des objets	Gegenstandsliste	Lista degli Oggetti	Lista de Objetos	Seznam předmětů	Lista Przedmiotów	Список Элементов	アイテムリスト
+$Font Size	Font Size	Taille de police	Schriftgröße	Dimensione del Font	Tamaño de Fuente	Velikost písma	Wielkość Czcionki	Размер Шрифта	フォントサイズ
+$Quantity Menu Min. Count	Quantity Menu Min. Count	Compte min. du menu de quantité	Mindestauswahlmenge	Contatore Min. per il Menù di Quantità	Número Mín. para Menú de Cantidad	Min. Počet Obj. Pro Kvant. Menu	Menu Ilości Min. Liczba	Мин. Кол-во Элементов в Меню	数量メニュー最小カウント
+$Category Icon Theme	Category Icon Theme	Thème des icônes de catégories	Symbolthema (Kategorie)	Tema delle icone di categoria	Tema de iconos de categoría	Vzhled ikon kategorií	Zestaw Ikon Kategorii	Тема Иконок Категорий	
+$Disable Icon Colors	Disable Icon Colors	Désactiver les couleurs d'icônes	Farbige Symbole deaktivieren	Disabilita Icone Colorate	Desactivar iconos en color	Vypnout barvy ikon	Wyłącz Kolory Ikon	Запретить Цветные Иконки	
+$Previous Column	Previous Column	Colonne précédente	Vorherige Spalte	Colonna Precedente	Columna Anterior	Předchozí sloupek	Poprzednia Kolumna	Предыдущая Колонка	前の欄
+$Next Column	Next Column	Colonne suivante	Nächste Spalte	Colonna Successiva	Columna Siguiente	Další sloupek	Następna Kolumna	Следующая Колонка	次の欄
+$Item Card	Item Card	Carte d'objets	Gegenstandskarte	Scheda dell'Oggetto	Tarjeta del Objeto	Karta předmětu	Karta Przedmiotu	Окно Просмотра Предмета	アイテムカード
+$3D Item	3D Item	Modèle 3D	3D Ansicht	Oggetto 3D	Objeto 3D	3D Objekt	Obiekt 3D	3D Вид Предмета	3D アイテム
+$Align	Align	Alignement	Ausrichtung	Allinea	Alinear	Zarovnání	Wyrównanie	Выравнивание	整列する
+$Horizontal Offset	Horizontal Offset	Axe horizontal	Horizontaler Abstand	Spostamento Orizzontale	Desplazamiento Horizontal	Vodorovné odsazení	Przesunięcie Poziome	Горизонтальное Смещение	水平オフセット
+$Vertical Offset	Vertical Offset	Axe vertical	Vertikaler Abstand	Spostamento Verticale	Desplazamiento Vertical	Svislé odsazení	Przesunięcie Pionowe	Вертикальное Смещение	垂直オフセット
+$Horizontal Anchor	Horizontal Anchor	Alignement horizontal	Horizontale Ausrichtung	Orientamento Orizzontale	Alineamiento horizontal	Horizontální ukotvení	Wyrównanie Poziome	Фиксация по Горизонтали	
+$Vertical Anchor	Vertical Anchor	Alignement vertical	Vertikale Ausrichtung	Orientamento Verticale	Alineamiento vertical	Vertikální ukotvení	Wyrównanie Pionowe	Фиксация по Вертикали	
+$Orientation	Orientation	Orientation	Orientierung	Orientamento	Alineamiento	Orientace	Orientacja	Ориентация	
+$Icon Size	Icon Size	Taille d'icône	Symbolgröße	Dimensione Icona	Dimensión del icono	Velikost ikon	Rozmiar Ikon	Размер Иконок	
+$Icon Group Count	Icon Group Count	Nombre de groupes d'icônes	Symbolgruppengröße	Numero d'icone raggruppate	Icono de Grupo Conde	Počet ikon ve skupině	Liczba Ikon Grupy	Кол-во Групп Иконок	
+$Minimum Time Left	Minimum Time Left	Temps minimum restant	Mindestrestdauer	Tempo minimo rimasto	Mínimo Tiempo Restante	Minimální zbývající čas	Minimalny pozostały czas	Минимальный Период Задержки	
+$Scale	Scale	Échelle	Größe	Scala	Escala	Měřítko	Skala	Масштаб	スケール
+$Disable Positioning	Disable Positioning	Désactiver le positionnement	Keine Positionsanpassung	Disabilita Posizionamento	Desactivar el posicionamiento	Zakázat polohování	Wyłącz Pozycjonowanie	Запретить Позиционирование	
+$SWF Version Checking	SWF Version Checking	Vérification des versions	SWF Versions-Check	Controllo Versione SWF	Comprobar Versión SWF	Kontrola Verze SWF	Sprawdzanie Wersji SWF	Проверка Версии SWF	SWF のバージョンの確認
+$Active Effects HUD	Active Effects HUD	Interface des effets actifs	Anzeige für Aktive Effekte	HUD degli Effetti Attivi	HUD de Effectos Activos	Aktivovat HUD Efektů	Aktywne Efekty HUD	Активные Эффекты HUD	
+									
+$Left	Left	Gauche	Links	Sinistra	Izquierda	Vlevo	Lewo	Лево	左
+$Right	Right	Droite	Rechts	Destra	Derecha	Vpravo	Prawo	Право	右
+$Center	Center	Centre	Mitte	Centro	Centro	Na střed	Środek	Центр	中央
+$Top	Top	Haut	Oben	Sopra	Alto	Nahoře	Góra	Верх	
+$Bottom	Bottom	Bas	Unten	Sotto	Abajo	Dole	Dół	Низ	
+$On	On	Activé	An	Attivo	Activo	Zapnuto	Włączone	Включено	
+$Off	Off	Désactivé	Aus	Disattivato	Desactivado	Vypnuto	Wyłączone	Выключено	
+$Enabled	Enabled	Activé	Aktiv	Abilitato	Activado	Aktivní	Aktywne	Разрешено	
+$Vertical	Vertical	Vertical	Vertikal	Verticale	Vertical	Vertikální	Pionowe	Вертикально	
+$Horizontal	Horizontal	Horizontal	Horizontal	Orizzontale	Horizontal	Horizontální	Poziome	Горизонтально	
+									
+$SKI_INFO1{}	Default: {}	Défaut: {}	Voreinstellung: {}	Predefinito: {}	Predefinido: {}	Výchozí nastavení: {}	Domyślnie: {}	По умолчанию: {}	デフォルト: {}
+$SKI_INFO2{}	Number of items required to trigger quantity menu, or 0 to disable it.\nDefault: {}	Nombre d'objets requis pour activer le menu de quantité, ou 0 pour le désactiver.\nDéfaut : {}	Mindestgröße eines Stapels zum Anzeigen des Mengendialogs.\nVoreinstellung: {}	Numero di oggetti richiesti per avviare il menù di quantità, o 0 per disabilitarlo.\nPredefinito: {}	Número de objetos requeridos para activar el Menú de Cantidad (0 para deshabilitar).\nPredefinido: {}	Počet objektů potřebných k otevření menu s posuvníkem, nebo 0 pro vypnutí.\nVýchozí hodnota: {}	Liczba elementów wymagana do aktywacji menu ilości lub 0, aby je wyłączyć.\nDomyślnie: {}	Количество элементов необходимое для инициализации меню, число или 0 чтобы отключить.\nПо умолчанию: {}	
+$SKI_INFO3{}	Incompatible or outdated SWFs may break SkyUI functionality. This only disables the warning message!\nDefault: {}	Des SWF incompatibles ou obsolètes peuvent empêcher le fonctionnement de SkyUI. Cela désactive uniquement le message d'avertissement!\nDéfaut : {}	Inkompatible oder veraltete SWF Dateien beeinträchtigen möglicherweise die Funktionalität von SkyUI. Mit dieser Option lässt sich lediglich die Warnung unterdrücken!\nVoreinstellung: {}	I file SWF incompatibili o datati potrebbero causare un malfunzionamento nelle funzioni di SkyUI. Questo disabilita solamente i messaggi di avviso!\nPredefinito: {}	Los archivos SWF incompatibles o desactualizados pueden provocar un malfuncionamiento de SkyUI. ¡Esto sólo deshabilita el mensaje de advertencia!\nPredefinido: {}	 Nekonpatibilní nebo zastaralé SWF může narušit funkčnost SkyUI. Zaškrtnutím vypnete zobrazování varovných zpráv!\nVýchozí nastavení: {}	Niekompatybilny lub przestarzały SWF może zepsuć funkcjonalność SkyUI. Ta opcja tylko wyłącza ostrzeżenie!\nDomyślnie: {}	Несовместимый или устаревший SWF файл может нарушить работу SkyUI. Эта функция отключит всплывающее сообщение!\nПо умолчанию: {}	
+$SKI_INFO4{}	Disables Positioning of the 3D Item.\nDefault: {}	Désactive le positionnement de l'objet 3D.\nDéfaut : {}	Deaktiviert Positionsanpassung der 3D Ansicht.\nVoreinstellung: {}	Disabilita il posizionamento dell'oggetto 3D.\nDefault: {}	Desactiva el posicionamiento del objeto 3D.\nPredefinido: {}	Zakáže polohování 3D objektu.\nVýchozí nastavení: {}	Wyłącza pozycjonowanie obiektu 3D.\nDomyślnie: {}	Запретить позиционирование 3D объекта в окне просмотра.\nПо умолчанию: {}	
+$SKI_INFO5{}	Hide effects with a remaining time higher than this. 0 to show all.\nDefault: {}	Cacher effets de durée inférieure à ceci. 0 pour afficher tous.\nDéfaut : {}	Mindestrestdauer ab der Effekte angezeigt werden. 0 zeigt alles an.\nVoreinstellung: {}	Nasconde gli effetticon un tempo rimanente maggiore di questo. 0 per mostrarli tutti.\nPredefinito: {}	Esconder efectos con un tiempo restante superior a éste. 0 para mostrar todos. \nPredefinido: {}	Skryje efekty, se zbývajícím časem vyšším než je tato hodnota. 0 zobrazí vše.\nVýchozí nastavení: {}	Ukryj efekty z pozostałym czasem większym niż. 0 pokaż wszystkie. \nDomyślne: {}	Продолжительность отображения от эффектов на дисплее. 0 показывать всегда \nПо умолчанию: {}	
+$SKI_INFO6	Each group can be configured individually.	Chaque groupe peut être configuré individuellement.	Jede Gruppe kann einzeln konfiguriert werden.	Ogni gruppo può essere configurato individualmente.	Cada grupo puede ser configurado individualmente.	Každá skupina může být nastavena samostatně.	Każda grupa może być skonfigurowana oddzielnie.	Каждая группа может иметь индивидуальные настройки	
+$SKI_INFO7{}	Unequip all armor before Group Use?\nDefault: {}	Déséquiper armure avant Utilisation en Groupe ?\nDéfaut : {}	Rüstung vorm Benutzen der Gruppe ausziehen?	Disequipaggiare tutta l'armatura prima dell'Uso del Gruppo?\nPredefinito: {}	¿Desequipar todas las piezas de armadura antes de Usar Grupo?\nPredefinido: {}	Má být před použitím skupiny vysvléknuta zbroj?\nVýchozí nastavení: {}	Ściągnij całą zbroję przed użyciem Grup?\nDomyślne: {}	Снять всю броню перед использованием группы?\nПо умолчанию: {}	
+$SKI_INFO8{}	Unequip both hands before Group Use?\nDefault: {}	Déséquiper mains avant Utilisation en Groupe ?\nDéfaut : {}	Beide Hände vorm Benutzen der Gruppe freimachen?	Disequipaggiare entrambe le mani prima dell'Uso del Gruppo?\nPredefinito: {}	¿Desequipar ambas manos antes de Usar Grupo?\nPredefinido: {}	Mají být před použitím skupiny vyprázdněny obě ruce?\nVýchozí nastavení: {}	Ściągnij rękawice przed użyciem Grup?\nDomyślne: {}	Разоружить обе руки перед использованием группы?\nПо умолчанию: {}	
+$SKI_INFO9{}	Unequip any ammo before Group Use?\nDefault: {}	Déséquiper munitions avant Utilisation en Groupe ?\nDéfaut : {}	Munition vorm Benutzen der Gruppe freimachen?	Disequipaggiare qualsiasi munizione prima dell'Uso del Gruppo?\nPredefinito: {}	¿Desequipar cualquier munición antes de Usar Grupo?\nPredefinido {}	Má být před použitím skupiny sundána veškerá munice?\nVýchozí nastavení: {}	Ściągnij amunicję przed użyciem Grup?\nDomyślne: {}	Снять любые боеприпасы перед использованием группы?\nПо умолчанию: {}	
+									
+									
+$SKI_MSG1	This control requires a keyboard mapping.	Cette fonction doit être affectée à une touche.	Diese Funktion muss einer Tastatureingabe zugewiesen werden.	Questo controllo richiede una mappatura della tastiera.	Este control necesita ser configurado en el teclado	Funkce vyžaduje nastavení klávesy na klávesnici.	Ta funkcja wymaga przypisania klawisza.	Для этой функции необходимо назначить клавишу.	このコントロールは、キーボードのマッピングを必要とします。
+$SKI_MSG2{}	This key is already mapped to:\n{}\n\nAre you sure you want to continue?	Cette touche est déjà affectée à : \n{}\n\nContinuer ?	Diese Taste wird bereits verwendet:\n{}\n\nTrotzdem fortfahren?	Questo tasto è già stato assegnato a:\n{}\n\nSicuro di voler continuare?	Este botón ya está asignado a:\n{}\n\n ¿Estás seguro que quieres continuar?	Tato klávesa je již používána:{}\n\nOpravdu chcete pokračovat?	Ten klawisz jest przypisany do: \n{}\n\nCzy jesteś pewien, że chcesz kontynuować?	Эта клавиша уже используется:\n{}\n\nВы уверены, что хотите продолжить?	
+									
+$NAME	$	$	$	$	$	$	NAZWA	$	$
+$ TO PLACE	$	$	$	$	$	$	$	 ПОМЕСТИТЬ	$
+$ TO STEAL	$	$	$	$	$	$	$	 УКРАСТЬ	$
+									
+$GEAR	GEAR	ÉQUIPEMENT	AUSRÜSTUNG	ATTREZZATURA	EQUIPO	VYBAVENÍ	EKWIPUNEK	СНАРЯЖЕНИЕ	
+$AID	AID	AIDE	HILFSMITTEL	AIUTO	AYUDA	POMOC	POMOC	ЗЕЛЬЯ И ЕДА	
+$GROUP	GROUP	GROUPE 	GRUPPE	GRUPPO	GRUPO	SKUPINA	GRUPA	ГРУППА	
+$Group {}	Group {}	Groupe {}	Gruppe {}	Gruppo {}	Grupo {}	Skupina {}	Grupa{}	Группа {}	
+$Show Button Help	Show Button Help	Montrer bouton d'aide	Tastenhilfe Anzeigen	Mostra il tasto Aiuto	Mostrar botón de ayuda	Zobrazovat nápovědu ke klávesám	Wyświetl pomoc klawiszy	Показать Кнопки Помощи	
+$Favorites Menu	Favorites Menu	Menu Favoris	Favoritenmenü	Menu dei Preferiti	Menu de Favoritos	Menu oblíbených	Menu ulubionych	Меню Избранного	
+$Preferences	Preferences	Préférences	Einstellungen	Preferenze	Preferencias	Nastavení	Preferencje	Настройки	
+$Confirm Group	Confirm Group	Confirmer groupe	Gruppe Bestätigen	Confermare gruppo	Confirmar grupo	Potvrdit skupinu	Potwierdź grupę	Подтвердить Группу	
+$Select Group	Select Group	Choisir groupe	Gruppe Auswählen	Selezionare gruppo	Seleccionar grupo	Vybrat skupinu	Wybierz grupę	Выбрать Группу	
+$Group	Group	Grouper 	Gruppieren	Raggruppare	Agrupar	Zařadit	Grupuj	Добавить в Группу	
+$Ungroup	Ungroup	Dégrouper	Gruppierung Aufheben	Anullamento gruppo	Desagrupar	Odebrat	Usuń z grupy	Убрать из Группы	
+$Set Group Icon	Set Group Icon	Choisir icône groupe	Symbol Setzen	Scegliere icona gruppo	Elegir icono de grupo	Přiřadit skupině ikonu	Wybierz ikonę dla grupy	Выбрать Иконку Группы	
+$Set Main Hand	Set Main Hand	Choisir main principale	Primärhand Setzen	Scegliere mano principale	Elegir mano principal	Vybrat hlavní ruku	Wybierz główną rękę	Выбрать Основную Руку	
+$Save Equip State	Save Equip State	Sauvegarder équipement	Ausrüstung Speichern	Salva lo stato dell'Equipaggiamento	Guardar estado del equipo	Uložit stav vybavení	Zapamiętaj stan ekwipunku	Сохранить Состояние Экипировки	
+$Group Use	Group Use	Utiliser groupe	Gruppe Benutzen	Usare gruppo	Usar grupo	Použít skupinu	Ubierz grupę	Использовать Группу	
+$Toggle Focus	Toggle Focus	Changer Focus	Fokus Wechseln	Cambiare Focus	Cambiar enfoque	Přepnout zaměření	Przełącz widok	Переместить Фокус	
+$Unequip Armor	Unequip Armor	Déséquiper armure	Rüstung Freimachen	Disequipaggiare corazza	Desequipar Armadura	Svléknout zbroj	Ściągnij zbroję	Снять Броню	
+$Unequip Hands	Unequip Hands	Déséquiper mains	Hände Freimachen	Disequipaggiare mani	Desequipar manos	Vyprázdnit ruce	Ściągnij rękawice	Разоружить Руки	
+$Unequip Ammo	Unequip Ammo	Déséquiper munitions	Munition Freimachen	Disequipaggiare munizione	Desequipar munición	Sundat munici	Ściągnij amunicję	Снять Боеприпасы	
+									
+% Completion	100.00%	100.00%	100.00%	97.89%	97.89%	97.89%	97.89%	97.89%	83.03%

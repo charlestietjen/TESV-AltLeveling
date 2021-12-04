@@ -1,0 +1,4 @@
+﻿class pickpocketOb extends cfslevelupmenu
+
+{
+	}

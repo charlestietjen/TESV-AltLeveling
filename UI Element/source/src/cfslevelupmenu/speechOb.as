@@ -1,0 +1,4 @@
+﻿class speechOb extends cfslevelupmenu
+
+{
+	}

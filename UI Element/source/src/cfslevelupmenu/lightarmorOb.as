@@ -1,0 +1,4 @@
+﻿class lightarmorOb extends cfslevelupmenu
+
+{
+	}

@@ -1,0 +1,4 @@
+﻿class acceptOb extends cfslevelupmenu
+
+{
+	}

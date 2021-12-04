@@ -1,0 +1,4 @@
+﻿class blockOb extends cfslevelupmenu
+
+{
+	}

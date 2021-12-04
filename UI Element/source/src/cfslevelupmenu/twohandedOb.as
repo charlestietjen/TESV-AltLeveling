@@ -1,0 +1,4 @@
+﻿class twohandedOb extends cfslevelupmenu
+
+{
+	}
