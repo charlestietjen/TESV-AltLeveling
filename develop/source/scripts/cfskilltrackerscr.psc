@@ -50,6 +50,8 @@ Float property gXP auto hidden
 function XPCalc(Float fXP, Float pcL, Float vL)
 	if pcL >= 10
 		XPIncr = ((pcL / 10) + (vL / 10)) * XPIncr
+	else
+		XPIncr = (1 + (vL /10)) * XPIncr ;Apply the scaling for level 10 statically across 1-9 to allow xp rewards to still scale with challenge
 	endif
 endFunction
 
