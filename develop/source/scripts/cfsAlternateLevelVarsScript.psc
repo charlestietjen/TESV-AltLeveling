@@ -44,7 +44,7 @@ function resorrev(int res)
     endif
 endfunction
 
-function IncXP(Float xpValue, bool track)
+function IncXP(Float xpValue, bool track = false) ;small tweak, i think assigning a default of false makes this arg optional? idk)
     debug.notification("XP increment by: " + xpValue + ", tracked: " + track)
 	Float heldxp = _cfsHeldXPFloatGV.GetValue()
     float ltXP = _cfsLifetimeXPAcq.GetValue()
