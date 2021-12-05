@@ -67,14 +67,22 @@ While in the navigation state move events increase or decrease the int. When the
 menu layout for int assignment follows:
 
 0   1   2
+
 3   4   5
+
 6   7   8
+
 9   10  11
+
 12  13  14
+
 15  16  17
+
   18  19
 
 A moveleft event will -1 the int, right will +1 the int, selecting the option immediately left or right. move up and move down will +3 or -3. Edge case if statements need to be used to catch moving up from the top row, left from zero, down from the bottom row and left/right/down from the edges of confirm/revert.
+
+navigate state needs to call a function on every move event to set the current arrow objects not visible, change the int and set the new arrows visible.
 
 The activate control listener shares code with click event on confirm/revert. The activate listener for skill objects changes the controller code to an edit state.
 
