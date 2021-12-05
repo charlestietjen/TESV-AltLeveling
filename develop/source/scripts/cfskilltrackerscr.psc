@@ -55,6 +55,8 @@ function XPCalc(Float fXP, Float pcL, Float vL)
 	endif
 endFunction
 
+;in the below, run a new formlist of consumables indexed to match tier lists, run a math.random to randomly place a consumable on the body
+
 ;run when the player is responsible for a kill actor event
 function OnStoryKillActor(objectreference victim, objectreference killer, Location aklocation, Int crimeStatus, Int relStatus)
 	actor vic = victim as actor
