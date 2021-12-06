@@ -22,6 +22,7 @@ Formlist property _cfsCTierList auto ;base xp 50
 Formlist property _cfsBTierList auto ;base xp 150
 Formlist property _cfsATierList auto ;base xp 500
 Formlist property _cfsSTierList auto ;base xp 1000
+Formlist property consumableList auto
 
 ; This formlist will be checked first to award xp that would be inappropriate when picked up by faction (unique actors, leveled bosses etc.)
 Formlist property _cfsCaseByCase auto
@@ -33,7 +34,7 @@ Int property aXP = 500 auto
 Int property bXP = 150 auto
 Int property cXP = 50 auto
 Int property dXP = 30 auto
-Int property eXP = 1 auto
+Int property eXP = 10 auto
 
 ;quest properties
 quest property _cfsAlternateLevelQuest auto
@@ -44,6 +45,7 @@ cfsAlternateLevelVarsScript property VarsScript auto
 ;private properties
 Float property XPIncr auto hidden
 Float property gXP auto hidden
+float dchance = 5.0
 
 ;recalculate xp based on level multipliers. Under level 10 results in base xp rewards. Starting at level 10 we use player level and victim level to determine a multiplier for xp
 ;higher player levels give a larger boost, hopefully keeping pace w/skyrim's leveled world behavior 
@@ -83,7 +85,7 @@ function grabxp(actor k) ;
 			XPIncr = XPTable[i] ;this case by case handling requires matching the order of the formlists 1:1 in the editor
 		endif
 	EndWhile
-	if XPIncr == 0 ;don't bother if we've already assigned an xp value
+	;if XPIncr == 0 ;don't bother if we've already assigned an xp value
 		Faction vFaction = none
 		formlist[] fList = new formlist[6] ;make a new formlist and populate it with our tiered formlists
 		fList[0] = _cfsSTierList
@@ -100,7 +102,7 @@ function grabxp(actor k) ;
 		xpArray[4] = dXP
 		xpArray[5] = eXP
 		i = fList.Length
-	endif
+	;endif
 	while i && XPIncr == 0 ;run through each of our tiers from S to E until a match is found then set the xp reward appropriately
 		i -= 1
 		int j = fList[i].GetSize()
@@ -109,6 +111,11 @@ function grabxp(actor k) ;
 			vFaction = fList[i].GetAt(j) as Faction
 			if k.isinfaction(vFaction)
 				XPIncr = xpArray[i]
+			endif
+			float droll = utility.randomfloat()
+			float dc = dchance - i
+			if dchance < droll 
+				k.AddItem(consumableList.Getat(i))
 			endif
 		endwhile
 	EndWhile

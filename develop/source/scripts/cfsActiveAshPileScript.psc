@@ -20,6 +20,7 @@ float property droppedxp auto
 Function dropxp()
     droppedxp = 0
     debug.notification("dropxp called")
+    cfsXPAshPileRef.enable()
     droppedxp = _cfsHeldXPFloatGV.GetValue()
     bool track = false
     playerref.pushactoraway(playerref, 1.0)
