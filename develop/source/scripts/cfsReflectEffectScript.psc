@@ -29,5 +29,6 @@ EndEvent
 
 function tp()
     cfsReturnXMarker.moveto(playerref)
+    utility.wait(1) ;wait added to ensure return marker places before the player is moved
     playerref.moveto(cfsLevelSpaceXMarker)
 endfunction
