@@ -113,8 +113,9 @@ function grabxp(actor k) ;
 				XPIncr = xpArray[i]
 			endif
 			float droll = utility.randomfloat()
-			float dc = dchance - i
+			float dc = (dchance - i) / 10
 			if dchance < droll 
+				debug.notification("Consumable Rolled successfully")
 				k.AddItem(consumableList.Getat(i))
 			endif
 		endwhile
