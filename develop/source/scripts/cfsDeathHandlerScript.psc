@@ -27,6 +27,7 @@ cfsVersionUpdateScr property UpdateScript auto
 cfsAlternateLevelVarsScript property ResScript auto
 
 bool property deathInit auto 
+location property storedLoc auto
 
 ;events 
 
@@ -34,7 +35,8 @@ bool property deathInit auto
 ;we also clear the list of actors to resurrect each time the location is changed
 
 Event onLocationChange(location oldL, location newL)
-    if newL.isloaded() && newL != cfsLevelSpaceLocation
+    if newL != storedLoc && newL != cfsLevelSpaceLocation
+        storedLoc = newL
         debug.notification("location change, moving xmarker")
         cfsReturnXMarker.moveto(playerref)
         int res = 0

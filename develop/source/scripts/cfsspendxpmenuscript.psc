@@ -25,7 +25,7 @@ globalvariable property _cfsLifetimeXPSpent Auto
 
 cfsDeathHandlerScript property DeathScript auto
 cfsAlternateLevelVarsScript property VarsScript auto
-cfsUIExMenu property UIExScript auto
+;cfsUIExMenu property UIExScript auto
 
 ;-- Variables ---------------------------------------
 int property _tempSCost auto hidden
@@ -86,7 +86,7 @@ function SpendXPMenu(Int aiMessage = 0, Int aiB = 0, Bool abMenu = true) ;aiMess
 					aiMessage = 5
 				elseif aiB == 6 ;Debug option
 					abMenu = False
-					UIExScript.StartMenu()
+					;UIExScript.StartMenu()
 				else
 					abMenu = false
 					playerRef.AddSpell(_cfsSkillGainKillerAb, false)

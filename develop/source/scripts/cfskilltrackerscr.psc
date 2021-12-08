@@ -45,7 +45,6 @@ cfsAlternateLevelVarsScript property VarsScript auto
 ;private properties
 Float property XPIncr auto hidden
 Float property gXP auto hidden
-float dchance = 5.0
 
 ;recalculate xp based on level multipliers. Under level 10 results in base xp rewards. Starting at level 10 we use player level and victim level to determine a multiplier for xp
 ;higher player levels give a larger boost, hopefully keeping pace w/skyrim's leveled world behavior 
@@ -111,12 +110,12 @@ function grabxp(actor k) ;
 			vFaction = fList[i].GetAt(j) as Faction
 			if k.isinfaction(vFaction)
 				XPIncr = xpArray[i]
-			endif
-			float droll = utility.randomfloat()
-			float dc = (dchance - i) / 10
-			if dchance < droll 
-				debug.notification("Consumable Rolled successfully")
-				k.AddItem(consumableList.Getat(i))
+				;float droll = utility.randomfloat()
+				;float dc = (5.0 - i) / 10
+				;if dc < droll 
+				;	debug.notification("Consumable Rolled successfully")
+				;	k.AddItem(consumableList.Getat(i))
+				;endif
 			endif
 		endwhile
 	EndWhile
