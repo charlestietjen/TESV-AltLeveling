@@ -1,8 +1,3 @@
-# IMPORTANT NOTE TO SELF
-Menu edits w/all sources included!! Study when time to spare!
-https://github.com/mlthelama/ShowStats
-
-
 # Riimindok - alternative leveling (working title) 
 - to-do list
 
