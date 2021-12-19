@@ -1,3 +1,8 @@
+# IMPORTANT NOTE TO SELF
+Menu edits w/all sources included!! Study when time to spare!
+https://github.com/mlthelama/ShowStats
+
+
 # Alternative leveling to-do list
 
 ## Leveling NPC:
